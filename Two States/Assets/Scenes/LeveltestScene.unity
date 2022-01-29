@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44577903, g: 0.49549842, b: 0.57429224, a: 1}
+  m_IndirectSpecularColor: {r: 0.4457791, g: 0.49549884, b: 0.574293, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -541,6 +541,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba940371560174a4a8357d1f0d3c1c07, type: 3}
+--- !u!114 &67784181 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1505073962919315085, guid: ba940371560174a4a8357d1f0d3c1c07, type: 3}
+  m_PrefabInstance: {fileID: 67784180}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe78820fb6babff448d8c82f5401669e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &67896644
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2142,6 +2153,14 @@ PrefabInstance:
       propertyPath: ghostCam
       value: 
       objectReference: {fileID: 603304956}
+    - target: {fileID: 7040612797393548129, guid: 727cc26757d821b4998e71906fc6e3db, type: 3}
+      propertyPath: ghostHand
+      value: 
+      objectReference: {fileID: 1317557722}
+    - target: {fileID: 7040612797393548129, guid: 727cc26757d821b4998e71906fc6e3db, type: 3}
+      propertyPath: humanHand
+      value: 
+      objectReference: {fileID: 67784181}
     - target: {fileID: 7040612797393548129, guid: 727cc26757d821b4998e71906fc6e3db, type: 3}
       propertyPath: ghostCamPos
       value: 
@@ -12392,6 +12411,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7540a8f266a6a1c4db1686d6bd94725c, type: 3}
+--- !u!114 &1317557722 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 708366825219614693, guid: 7540a8f266a6a1c4db1686d6bd94725c, type: 3}
+  m_PrefabInstance: {fileID: 1317557721}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe78820fb6babff448d8c82f5401669e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1319690905 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0cac03ca266fb734aa6d66a2ebc56427, type: 3}
