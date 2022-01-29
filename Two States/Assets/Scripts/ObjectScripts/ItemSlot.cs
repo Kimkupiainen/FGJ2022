@@ -17,9 +17,13 @@ public class ItemSlot : MonoBehaviour
     }
     public void InsertItem(UsableObject item)
     {
+        item.GetComponent<Rigidbody>().isKinematic = true;
+        item.GetComponent<Collider>().enabled = false;
+
         item.transform.parent = point;
         item.transform.localPosition = Vector3.zero;
         item.transform.localEulerAngles = Vector3.zero;
+
         IsActivated = true;
         onInsert.Invoke(this);
     }

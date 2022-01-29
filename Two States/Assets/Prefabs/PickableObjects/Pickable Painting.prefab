@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usableObjectTypes: 0c0000003c0000000a000000
-  code: TauluA
+  code: Taulu
   onEvents:
     activeEvents: []
   col: {fileID: 4889394173523969363}
