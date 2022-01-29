@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1505073962919315086}
   - component: {fileID: 1505073962919315085}
+  - component: {fileID: 4150226824901429274}
   m_Layer: 0
   m_Name: HumanHand
   m_TagString: Untagged
@@ -54,6 +55,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 32769
   usableMask: 15
+--- !u!114 &4150226824901429274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505073962919315084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04963cd01f81f248b05fbca4c0739dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 4001606640218215202, guid: a011b835197d86a44b747a2393d49752, type: 3}
+  effects:
+  - name: Punch
+    clip: {fileID: 8300000, guid: 5574c58d83bc4f34dbf8b507e2a3a686, type: 3}
 --- !u!1 &1505073963482379664
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,6 +269,18 @@ MonoBehaviour:
           - m_Target: {fileID: 1505073964408696609}
             m_TargetAssemblyTypeName: C7_Player, Assembly-CSharp
             m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 4150226824901429274}
+            m_TargetAssemblyTypeName: AudioEffectSpawner, Assembly-CSharp
+            m_MethodName: Spawn
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}

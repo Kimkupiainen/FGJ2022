@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 6605102898397700407}
   - component: {fileID: 6605102898397700404}
   - component: {fileID: 6605102898397700392}
+  - component: {fileID: 6604228728127435808}
   m_Layer: 15
   m_Name: SamplePickableKey
   m_TagString: Untagged
@@ -241,7 +242,55 @@ MonoBehaviour:
   usableObjectTypes: 010000000a00000014000000
   code: SampleCode123
   onEvents:
-    activeEvents: []
+    activeEvents:
+    - occurance: 29
+      action:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6604228728127435808}
+            m_TargetAssemblyTypeName: AudioEffectSpawner, Assembly-CSharp
+            m_MethodName: Spawn
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - occurance: 40
+      action:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6604228728127435808}
+            m_TargetAssemblyTypeName: AudioEffectSpawner, Assembly-CSharp
+            m_MethodName: Spawn
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - occurance: 41
+      action:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 6604228728127435808}
+            m_TargetAssemblyTypeName: AudioEffectSpawner, Assembly-CSharp
+            m_MethodName: Spawn
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
   col: {fileID: 6605102898397700404}
   rb: {fileID: 6605102898397700392}
 --- !u!65 &6605102898397700404
@@ -273,6 +322,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6604228728127435808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6605102898397700405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f04963cd01f81f248b05fbca4c0739dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectPrefab: {fileID: 4001606640218215202, guid: a011b835197d86a44b747a2393d49752, type: 3}
+  effects:
+  - name: Keys
+    clip: {fileID: 8300000, guid: 489a4e4c08280c540a8522da6a2e7123, type: 3}
 --- !u!1 &6605102898828242513
 GameObject:
   m_ObjectHideFlags: 0

@@ -42,6 +42,7 @@ public class UseObject : MonoBehaviour
             if (PickedObject != Hand) { Hand.OnEvents.Invoke(OnEventType.OnTryUse, this); }
         }
 
+        if (Input.GetKeyDown(KeyCode.Mouse1) && delayTimer <= 0.0f) { DropObject(); }
     }
 
     private void TryUse()
