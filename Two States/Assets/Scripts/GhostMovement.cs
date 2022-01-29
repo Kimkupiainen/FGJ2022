@@ -15,6 +15,7 @@ public class GhostMovement : MonoBehaviour
     private void Start()
     {
         ghostCamPos.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked; // Pit‰‰ muistaa callaa unlockkia jos on menu tms
     }
 
     // Update is called once per frame
