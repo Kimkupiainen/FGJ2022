@@ -54,7 +54,6 @@ GameObject:
   - component: {fileID: 7040612797393548130}
   - component: {fileID: 7040612797393548131}
   - component: {fileID: 7040612797393548132}
-  - component: {fileID: 7040612797393548133}
   - component: {fileID: 7040612797393548129}
   m_Layer: 0
   m_Name: Player
@@ -127,19 +126,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7040612797393548133
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7040612797393548134}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7040612797393548129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,8 +142,7 @@ MonoBehaviour:
   ghostCamPos: {fileID: 0}
   playerPosition: {fileID: 7040612797393548134}
   ghostPosition: {fileID: 0}
-  speed: 0.1
-  ghostDistance: 50
+  speed: 0
   playerCam: {fileID: 7040612797718263458}
   ghostCam: {fileID: 0}
   chosenCharacter: 0
