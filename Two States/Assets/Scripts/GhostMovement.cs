@@ -21,6 +21,7 @@ public class GhostMovement : MonoBehaviour
         ghostHand.Enable(false);
         humanHand.Enable(true);
         ghostCamPos.SetActive(false);
+        StartCoroutine(WaitForGhost());
         Cursor.lockState = CursorLockMode.Locked; // Pit‰‰ muistaa callaa unlockkia jos on menu tms
     }
 
