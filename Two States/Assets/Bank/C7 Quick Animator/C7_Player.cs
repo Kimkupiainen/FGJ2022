@@ -25,6 +25,9 @@ public class C7_Player : MonoBehaviour
     private float timer = 0.0f;
     private float direction = 1f;
 
+    private C7_Player_Play_State state = C7_Player_Play_State.notPlaying;
+    public C7_Player_Play_State State { get => state; private set => state = value; }
+
     private void OnValidate()
     {
         this.enabled = true;
@@ -35,7 +38,7 @@ public class C7_Player : MonoBehaviour
     {
         if (started) { return; }
         if (playOnStart) { Play(); }
-        else { this.enabled = false; }
+        else { this.enabled = false; State = C7_Player_Play_State.notPlaying; }
     }
 
     private void Update()
@@ -61,8 +64,14 @@ public class C7_Player : MonoBehaviour
             }
         }
 
+        ForceToPoint(timer);
+    }
+
+    public void ForceToPoint(float point)
+    {
+        timer = point;
         for (int i = 0; i < linkedComponents.Count; i++)
-        { linkedComponents[i].UpdateState(timer); }
+        { linkedComponents[i].UpdateState(point); }
     }
 
     /// <summary>
@@ -72,6 +81,7 @@ public class C7_Player : MonoBehaviour
     public void Play()
     {
         started = true;
+        State = C7_Player_Play_State.playing;
         this.enabled = true;
         direction = 1f;
         timer = 0f;
@@ -79,15 +89,31 @@ public class C7_Player : MonoBehaviour
     }
     public void Pause()
     {
+        State = C7_Player_Play_State.paused;
         this.enabled = false;
     }
     public void Continue()
     {
+        State = C7_Player_Play_State.playing;
         this.enabled = true;
     }
     public void Stop()
     {
+        State = C7_Player_Play_State.notPlaying;
         this.enabled = false;
         onEnd.Invoke();
+    }
+
+    public void ContinueOrPlay()
+    {
+        if (State == C7_Player_Play_State.paused) { Continue(); }
+        else { Play(); }
+    }
+
+    public enum C7_Player_Play_State
+    {
+        notPlaying = 0,
+        playing = 1,
+        paused = 2,
     }
 }

@@ -46,4 +46,8 @@ public enum UsableObjectType
     pickable = 1,
 
     lockThing = 10,
+
+    door = 20,
+
+    ghostEnvironment = 50,
 }

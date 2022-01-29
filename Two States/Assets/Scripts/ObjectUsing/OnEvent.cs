@@ -87,6 +87,7 @@ public enum OnEventType
 {
     OnAny = 0,
 
+    OnTryUse = 29,
     OnUse = 30,
     OnUnusable = 31,
     OnNoHit = 32,

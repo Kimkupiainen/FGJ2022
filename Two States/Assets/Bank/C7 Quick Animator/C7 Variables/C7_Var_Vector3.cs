@@ -23,6 +23,10 @@ public abstract class C7_Var_Vector3 : C7_Component
     public Vector3 Multiplier { get { return multiplier; } set { multiplier = value; } }
     public Vector3 BaseValue { get { return baseValue; } set { baseValue = value; } }
 
+    private void OnValidate()
+    {
+        SetCurrentAsBase();
+    }
 
     public override void UpdateState(float state)
     {
