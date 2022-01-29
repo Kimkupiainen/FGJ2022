@@ -76,4 +76,9 @@ public class UseObject : MonoBehaviour
         if (pickedObject != null) { PickedObject.Drop(this); }
         if (!replace) { pickedObject = hand; PickedObject.OnEvents.Invoke(OnEventType.OnPickup, this); }
     }
+
+    public void Enable(bool state)
+    {
+        gameObject.SetActive(state);
+    }
 }

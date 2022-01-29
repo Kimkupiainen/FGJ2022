@@ -8,12 +8,18 @@ public class GhostMovement : MonoBehaviour
     bool canMove = true;
     [SerializeField] GameObject playerCamPos, ghostCamPos, playerPosition, ghostPosition;
     Rigidbody playerRb, ghostRb;
-    [SerializeField]int speed = 20;
+    [SerializeField] int speed = 20;
     float ghostDistance = 8;
     public CinemachineVirtualCamera playerCam, ghostCam;
     public int chosenCharacter;
+
+    [SerializeField] private UseObject ghostHand;
+    [SerializeField] private UseObject humanHand;
+
     private void Start()
     {
+        ghostHand.Enable(false);
+        humanHand.Enable(true);
         ghostCamPos.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked; // Pitää muistaa callaa unlockkia jos on menu tms
     }
@@ -21,8 +27,8 @@ public class GhostMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+
         if (canMove)
         {
             if (Input.GetKeyDown(KeyCode.Q))
@@ -33,7 +39,7 @@ public class GhostMovement : MonoBehaviour
             if (chosenCharacter >= 2)
             {
                 chosenCharacter = 0;
-               ChangeCharacter();
+                ChangeCharacter();
             }
 
             if (chosenCharacter == 1)  //GHOST
@@ -47,7 +53,7 @@ public class GhostMovement : MonoBehaviour
                 ghostPosition.transform.position += Vector3.down * Input.GetAxis("Fire3") * speed * Time.deltaTime;
                 if (Vector3.Distance(playerPosition.transform.position, ghostPosition.transform.position) >= ghostDistance)
                 {
-                    ghostPosition.transform.position = Vector3.MoveTowards(ghostPosition.transform.position, playerPosition.transform.position, speed*Time.deltaTime);
+                    ghostPosition.transform.position = Vector3.MoveTowards(ghostPosition.transform.position, playerPosition.transform.position, speed * Time.deltaTime);
                 }
             }
             if (chosenCharacter == 0) //PLAYER
@@ -58,7 +64,7 @@ public class GhostMovement : MonoBehaviour
                 playerPosition.transform.position += transform.TransformDirection(Vector3.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime);
             }
         }
- 
+
     }
 
     void ChangeCharacter()
@@ -68,14 +74,18 @@ public class GhostMovement : MonoBehaviour
         {
             // Ghost -> Player
             case 0:
+                ghostHand.Enable(false);
+                humanHand.Enable(true);
                 playerCamPos.SetActive(true);
                 ghostCamPos.SetActive(false);
                 playerCam.transform.rotation = playerPosition.transform.rotation;
                 StartCoroutine(WaitForGhost());
                 break;
 
-                //Player -> Ghost
+            //Player -> Ghost
             case 1:
+                ghostHand.Enable(true);
+                humanHand.Enable(false);
                 Transform newGhostPosition = playerPosition.transform;
                 playerCamPos.SetActive(false);
                 ghostCamPos.SetActive(true);
