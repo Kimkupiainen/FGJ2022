@@ -74,7 +74,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8476967950464063394}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.9659232, z: 0, w: 0.25882885}
   m_LocalPosition: {x: -0.7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -118,7 +118,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8476967951019305683}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -133,7 +133,7 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8476967951019305683}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -230,7 +230,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   multiplier: {x: 1, y: 150, z: 1}
-  baseValue: {x: -0, y: 0, z: 0}
+  baseValue: {x: -0, y: 149.99884, z: 0}
 --- !u!1 &8476967951019305686
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,8 +242,8 @@ GameObject:
   - component: {fileID: 8476967951019305685}
   - component: {fileID: 8476967951019305681}
   - component: {fileID: 8476967951019305682}
-  - component: {fileID: 8476967951019305683}
   - component: {fileID: 8476967951019305684}
+  - component: {fileID: 42108378625999509}
   m_Layer: 15
   m_Name: Cube
   m_TagString: Untagged
@@ -292,7 +292,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 810afd2e451ec1e48830e2711590ace4, type: 2}
+  - {fileID: 2100000, guid: dcac425a7a3072947b77302be414b745, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -314,19 +314,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &8476967951019305683
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8476967951019305686}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8476967951019305684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,7 +331,7 @@ MonoBehaviour:
   onUse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8476967951019305683}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -380,6 +367,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &42108378625999509
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8476967951019305686}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.3999997, y: 2.3999999, z: 0.31459838}
+  m_Center: {x: -0.002106398, y: 1.2388076, z: -0.00030744073}
 --- !u!1001 &1862023648148841197
 PrefabInstance:
   m_ObjectHideFlags: 0
