@@ -51,18 +51,26 @@ public class GhostMovement : MonoBehaviour
         switch (chosenCharacter)
         {
             case 0:
-                Transform newGhostPosition = playerPosition.transform;
-                ghostPosition.transform.position = newGhostPosition.position;
                 playerCamPos.SetActive(true);
                 ghostCamPos.SetActive(false);
                 playerCam.transform.rotation = playerPosition.transform.rotation;
+                StartCoroutine(WaitForGhost());
                 break;
             case 1:
+                Transform newGhostPosition = playerPosition.transform;
                 playerCamPos.SetActive(false);
                 ghostCamPos.SetActive(true);
+                ghostPosition.transform.position = newGhostPosition.position;
                 ghostCam.transform.rotation = ghostPosition.transform.rotation;
                 break;
 
         }
+    }
+    IEnumerator WaitForGhost()
+    {
+        Transform newGhostPosition = playerPosition.transform;
+        yield return new WaitForSeconds(2);
+        ghostPosition.transform.position = newGhostPosition.position;
+        StopCoroutine(WaitForGhost());
     }
 }
