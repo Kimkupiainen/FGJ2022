@@ -8,15 +8,10 @@ public class GhostMovement : MonoBehaviour
     bool canMove = true;
     [SerializeField] GameObject playerCamPos, ghostCamPos, playerPosition, ghostPosition;
     Rigidbody playerRb, ghostRb;
-    public float speed = 0.1f;
-    public float ghostDistance = 50;
+    [SerializeField]int speed = 20;
+    float ghostDistance = 8;
     public CinemachineVirtualCamera playerCam, ghostCam;
     public int chosenCharacter;
-
-    //TODO: Varmista että pelaajan forward on eteenpäin suhteessa valitun objektin rotaatioon.
-    //Varmista että ghostista siirtyminen takaisin pelaajaan palauttaa ghostin pelaajan positioon.
-    //Aseta raja-arvo sille kuinka monen yksikön päähän ghost voi matkata pelaajasta.
-    //Ghost voi liikkua myös Y-axiksella. Se toiminnallisuus pitää lisätä.
     private void Start()
     {
         ghostCamPos.SetActive(false);
@@ -32,48 +27,40 @@ public class GhostMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q))
             {
                 chosenCharacter++;
-                StartCoroutine(ChangeCharacter());
+                ChangeCharacter();
             }
             if (chosenCharacter >= 2)
             {
                 chosenCharacter = 0;
-                StartCoroutine(ChangeCharacter());
+               ChangeCharacter();
             }
 
-            if (chosenCharacter == 1)
+            if (chosenCharacter == 1)  //GHOST
             {
 
                 ghostCamPos.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
                 ghostPosition.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
-                if (Vector3.Distance(playerPosition.transform.position, ghostPosition.transform.position) <= ghostDistance)
-                {            
-                    ghostPosition.transform.position += ghostCamPos.transform.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") * speed);
-                    ghostPosition.transform.position += ghostCamPos.transform.TransformDirection(Vector3.right * Input.GetAxis("Horizontal") * speed);
-                    ghostPosition.transform.position += Vector3.up * Input.GetAxis("Jump") * speed;
-                }else
+                ghostPosition.transform.position += ghostCamPos.transform.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime);
+                ghostPosition.transform.position += ghostCamPos.transform.TransformDirection(Vector3.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime);
+                ghostPosition.transform.position += Vector3.up * Input.GetAxis("Jump") * speed * Time.deltaTime;
+                ghostPosition.transform.position += Vector3.down * Input.GetAxis("Fire3") * speed * Time.deltaTime;
+                if (Vector3.Distance(playerPosition.transform.position, ghostPosition.transform.position) >= ghostDistance)
                 {
-                    StartCoroutine(Slideback());
+                    ghostPosition.transform.position = Vector3.MoveTowards(ghostPosition.transform.position, playerPosition.transform.position, speed*Time.deltaTime);
                 }
             }
-            if (chosenCharacter == 0)
+            if (chosenCharacter == 0) //PLAYER
             {
                 playerCamPos.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
                 playerPosition.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
-                playerPosition.transform.position += transform.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") * speed);
-                playerPosition.transform.position += transform.TransformDirection(Vector3.right * Input.GetAxis("Horizontal") * speed);
+                playerPosition.transform.position += transform.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime);
+                playerPosition.transform.position += transform.TransformDirection(Vector3.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime);
             }
         }
  
     }
-    IEnumerator Slideback()
-    {
-        canMove = false;
-        ghostCamPos.transform.position = Vector3.MoveTowards(ghostCamPos.transform.position, playerPosition.transform.position, speed);
-        yield return new WaitForSeconds(0.5f);
-        canMove = true;
-    }
 
-    IEnumerator ChangeCharacter()
+    void ChangeCharacter()
     {
         canMove = false;
         switch (chosenCharacter)
@@ -83,7 +70,6 @@ public class GhostMovement : MonoBehaviour
                 playerCamPos.SetActive(true);
                 ghostCamPos.SetActive(false);
                 playerCam.transform.rotation = playerPosition.transform.rotation;
-
                 StartCoroutine(WaitForGhost());
                 break;
 
@@ -94,7 +80,6 @@ public class GhostMovement : MonoBehaviour
                 ghostCamPos.SetActive(true);
                 ghostPosition.transform.position = newGhostPosition.position;
                 ghostCam.transform.rotation = ghostPosition.transform.rotation;
-                yield return new WaitForSeconds(2);
                 ghostPosition.transform.parent = null;
                 canMove = true;
                 break;
