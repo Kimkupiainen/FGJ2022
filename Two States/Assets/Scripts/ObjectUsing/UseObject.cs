@@ -30,28 +30,28 @@ public class UseObject : MonoBehaviour
         bool didHit = Physics.Raycast(rayPoint.position, rayPoint.TransformDirection(Vector3.forward), out hit, rayDistance, rayMask);
 
         //Didn't hit anything
-        if (!didHit) { PickedObject.OnNoHit.Invoke(); return; }
+        if (!didHit) { PickedObject.OnEvents.Invoke(OnEventType.OnNoHit, this); return; }
         //Hit something blocking
-        if (hit.collider.gameObject.layer != usableMask) { PickedObject.OnNoHit.Invoke(); return; }
+        if (hit.collider.gameObject.layer != usableMask) { PickedObject.OnEvents.Invoke(OnEventType.OnNoHit, this); return; }
 
         //Hit something usable
         UsableObject hitObject = hit.collider.GetComponent<UsableObject>();
         if (hitObject == null) { Debug.LogError(string.Format("{0} is missing UsableObject component!", hit.collider.gameObject.name)); return; }
 
-        if (hitObject.Use(this, pickedObject)) { PickedObject.OnUse.Invoke(); }
-        else { PickedObject.OnUnusable.Invoke(); }
+        if (hitObject.Use(this, pickedObject)) { PickedObject.OnEvents.Invoke(OnEventType.OnUse, this); }
+        else { PickedObject.OnEvents.Invoke(OnEventType.OnUnusable, this); }
     }
 
     public void PickObject(PickableObject pickablecObject)
     {
         if (PickedObject != hand) { DropObject(true); }
         pickedObject = pickablecObject;
-        PickedObject.OnPickup.Invoke(this);
+        PickedObject.OnEvents.Invoke(OnEventType.OnPickup, this);
     }
 
     public void DropObject(bool replace = false)
     {
-        if (pickedObject != null) { PickedObject.OnDrop.Invoke(this); }
-        if (!replace) { pickedObject = hand; PickedObject.OnPickup.Invoke(this); }
+        if (pickedObject != null) { PickedObject.OnEvents.Invoke(OnEventType.OnDrop, this); }
+        if (!replace) { pickedObject = hand; PickedObject.OnEvents.Invoke(OnEventType.OnPickup, this); }
     }
 }
