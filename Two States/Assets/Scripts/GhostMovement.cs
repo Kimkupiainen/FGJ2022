@@ -90,7 +90,7 @@ public class GhostMovement : MonoBehaviour
                 playerCamPos.SetActive(false);
                 ghostCamPos.SetActive(true);
                 ghostPosition.transform.position = newGhostPosition.position;
-                ghostCam.transform.rotation = ghostPosition.transform.rotation;
+                ghostCam.transform.rotation = ghostCam.transform.rotation;
                 ghostPosition.transform.parent = null;
                 canMove = true;
                 break;
