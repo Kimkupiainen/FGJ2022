@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1505073962919315084, guid: ba940371560174a4a8357d1f0d3c1c07, type: 3}
       propertyPath: m_Name
-      value: GhostHand
+      value: GhostHand Variant
       objectReference: {fileID: 0}
     - target: {fileID: 1505073962919315085, guid: ba940371560174a4a8357d1f0d3c1c07, type: 3}
       propertyPath: rayMask.m_Bits
@@ -61,7 +61,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1505073964408696614, guid: ba940371560174a4a8357d1f0d3c1c07, type: 3}
       propertyPath: usableObjectTypes.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1505073964408696614, guid: ba940371560174a4a8357d1f0d3c1c07, type: 3}
       propertyPath: usableObjectTypes.Array.data[0]
@@ -69,7 +69,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1505073964408696614, guid: ba940371560174a4a8357d1f0d3c1c07, type: 3}
       propertyPath: usableObjectTypes.Array.data[1]
-      value: 50
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505073964408696614, guid: ba940371560174a4a8357d1f0d3c1c07, type: 3}
+      propertyPath: usableObjectTypes.Array.data[2]
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505073964408696614, guid: ba940371560174a4a8357d1f0d3c1c07, type: 3}
+      propertyPath: usableObjectTypes.Array.data[3]
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba940371560174a4a8357d1f0d3c1c07, type: 3}

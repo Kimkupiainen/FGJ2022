@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b5682edc8d9c6499e514e543125440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectType: 1
+  objectType: 10
   code: 
   onUse:
     m_PersistentCalls:
@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26e74b55ebde6e4084b8b50bafa661e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usableObjectTypes: 010000000a00000014000000
+  usableObjectTypes: 0a00000032000000
   code: SampleCode123
   onEvents:
     activeEvents:

@@ -43,11 +43,17 @@ public enum UsableObjectType
     unusable = -1,
 
     environment = 0,
-    pickable = 1,
+    ghostEnvironment = 1,
+    humanEnvironment = 2,
 
-    lockThing = 10,
+    pickable = 10,
+    ghostPickable = 11,
+    humanPickable = 12,
 
-    door = 20,
+    lockThing = 50,
 
-    ghostEnvironment = 50,
+    slot = 60,
+
+
+
 }
