@@ -6,8 +6,9 @@ using UnityEngine.Events;
 public class ItemSlot : MonoBehaviour
 {
     [SerializeField] private Transform point;
-    [SerializeField] private UnityEvent onInsert;
+    [SerializeField] private UnityEvent<ItemSlot> onInsert;
 
+    public bool IsActivated { get; private set; } = false;
     public void InsertItem(UseObject user)
     {
         UsableObject item = user.PickedObject.GetComponent<UsableObject>();
@@ -19,6 +20,7 @@ public class ItemSlot : MonoBehaviour
         item.transform.parent = point;
         item.transform.localPosition = Vector3.zero;
         item.transform.localEulerAngles = Vector3.zero;
-        onInsert.Invoke();
+        IsActivated = true;
+        onInsert.Invoke(this);
     }
 }
