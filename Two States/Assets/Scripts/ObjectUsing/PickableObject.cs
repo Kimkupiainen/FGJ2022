@@ -27,33 +27,29 @@ public class PickableObject : MonoBehaviour
 
 
 
-    [Tooltip("Invoked if successfully used an object.")]
-    [SerializeField] private UnityEvent onUse;
-    public UnityEvent OnUse { get => onUse; }
-
-    [Tooltip("Invoked if tried to use an object which cannot be used by this.")]
-    [SerializeField] private UnityEvent onUnusable;
-    public UnityEvent OnUnusable { get => onUnusable; }
-
-    [Tooltip("Invoked if didn't hit anything or hit a blocking object.")]
-    [SerializeField] private UnityEvent onNoHit;
-    public UnityEvent OnNoHit { get => onNoHit; }
+    [SerializeField] private OnEvent<UseObject> onEvents;
+    public OnEvent<UseObject> OnEvents { get => onEvents; }
 
 
-
-    [Space(40)]
-    [Tooltip("Invoked if successfully used an object.")]
-    [SerializeField] private UnityEventUseObject onPickup;
-    public UnityEventUseObject OnPickup { get => onPickup; }
-
-    [Tooltip("Invoked if successfully used an object.")]
-    [SerializeField] private UnityEventUseObject onDrop;
-    public UnityEventUseObject OnDrop { get => onDrop; }
-
-
-    public void PickUp(UseObject User)
+    [SerializeField] private Collider col;
+    [SerializeField] private Rigidbody rb;
+    public void PickUp(UseObject user)
     {
+        if (col != null) { col.enabled = false; }
+        if (rb != null) { rb.isKinematic = true; }
+        transform.parent = user.Hand.transform;
+        transform.position = user.Hand.transform.position;
+        transform.localEulerAngles = Vector3.zero;
+        user.PickObject(this);
+        OnEvents.Invoke(OnEventType.OnPickup, user);
+    }
 
+    public void Drop(UseObject user)
+    {
+        if (col != null) { col.enabled = true; }
+        if (rb != null) { rb.isKinematic = false; }
+        transform.parent = null;
+        OnEvents.Invoke(OnEventType.OnDrop, user);
     }
 }
 
