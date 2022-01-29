@@ -258,7 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b26e74b55ebde6e4084b8b50bafa661e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usableObjectTypes: 010000000000000014000000
+  usableObjectTypes: 00000000020000000a0000000c000000
   code: 
   onEvents:
     activeEvents:
