@@ -10,7 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5190884768794367720}
   - component: {fileID: 8580396644092498167}
-  m_Layer: 0
+  - component: {fileID: 8090279338010635064}
+  - component: {fileID: 3628215388023858929}
+  - component: {fileID: 9131193702291486754}
+  - component: {fileID: 6776668242849930539}
+  m_Layer: 15
   m_Name: Pickable Bucket
   m_TagString: Untagged
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
@@ -48,6 +52,125 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8090279338010635064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145672262567362226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b5682edc8d9c6499e514e543125440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectType: 2
+  code: 
+  onUse:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3628215388023858929}
+        m_TargetAssemblyTypeName: PickableObject, Assembly-CSharp
+        m_MethodName: PickUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3628215388023858929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145672262567362226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b26e74b55ebde6e4084b8b50bafa661e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usableObjectTypes: 0a0000000c000000320000003d000000
+  code: 
+  onEvents:
+    activeEvents:
+    - occurance: 29
+      action:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 4567546337699809810}
+            m_TargetAssemblyTypeName: C7_Player, Assembly-CSharp
+            m_MethodName: Play
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+          - m_Target: {fileID: 9131193702291486754}
+            m_TargetAssemblyTypeName: WaterBucket, Assembly-CSharp
+            m_MethodName: PreRemoveWater
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+    - occurance: 41
+      action:
+        m_PersistentCalls:
+          m_Calls:
+          - m_Target: {fileID: 9131193702291486754}
+            m_TargetAssemblyTypeName: WaterBucket, Assembly-CSharp
+            m_MethodName: PreRemoveWater
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
+  col: {fileID: 6776668242849930539}
+  rb: {fileID: 8580396644092498167}
+--- !u!114 &9131193702291486754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145672262567362226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13dfef2a555c43e4e96f1ad01bf107aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireCode: WATER
+  pickable: {fileID: 3628215388023858929}
+  waterPlayer: {fileID: 4743176098793879276}
+--- !u!65 &6776668242849930539
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145672262567362226}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.75, z: 0.3}
+  m_Center: {x: 0, y: -0.48, z: 0}
 --- !u!1 &451643309751238389
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +326,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8325708948488965399}
+      - m_Target: {fileID: 9131193702291486754}
         m_TargetAssemblyTypeName: WaterBucket, Assembly-CSharp
         m_MethodName: AddWater
         m_Mode: 1
@@ -218,7 +341,7 @@ MonoBehaviour:
   onEnd:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8325708948488965399}
+      - m_Target: {fileID: 9131193702291486754}
         m_TargetAssemblyTypeName: WaterBucket, Assembly-CSharp
         m_MethodName: RemoveWater
         m_Mode: 1
@@ -241,11 +364,6 @@ GameObject:
   - component: {fileID: 2075588827465037835}
   - component: {fileID: 2540952407337013534}
   - component: {fileID: 939478200787288376}
-  - component: {fileID: 678483038486356840}
-  - component: {fileID: 5747097644902940058}
-  - component: {fileID: 1691399875816406685}
-  - component: {fileID: 178916043959635529}
-  - component: {fileID: 8325708948488965399}
   m_Layer: 15
   m_Name: Cylinder
   m_TagString: Untagged
@@ -316,152 +434,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &678483038486356840
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482793826202751620}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 2, z: 0.7}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5747097644902940058
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482793826202751620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47b5682edc8d9c6499e514e543125440, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectType: 12
-  code: 
-  onUse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1691399875816406685}
-        m_TargetAssemblyTypeName: PickableObject, Assembly-CSharp
-        m_MethodName: PickUp
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1691399875816406685
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482793826202751620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b26e74b55ebde6e4084b8b50bafa661e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  usableObjectTypes: 0a0000000c000000320000003d000000
-  code: WATER
-  onEvents:
-    activeEvents:
-    - occurance: 29
-      action:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 178916043959635529}
-            m_TargetAssemblyTypeName: C7_Player, Assembly-CSharp
-            m_MethodName: Play
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-          - m_Target: {fileID: 8325708948488965399}
-            m_TargetAssemblyTypeName: WaterBucket, Assembly-CSharp
-            m_MethodName: PreRemoveWater
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-    - occurance: 41
-      action:
-        m_PersistentCalls:
-          m_Calls:
-          - m_Target: {fileID: 8325708948488965399}
-            m_TargetAssemblyTypeName: WaterBucket, Assembly-CSharp
-            m_MethodName: PreRemoveWater
-            m_Mode: 1
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-  col: {fileID: 678483038486356840}
-  rb: {fileID: 8580396644092498167}
---- !u!114 &178916043959635529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482793826202751620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8669e32575a69f949bd080fe267e7c64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  duration: 0.3
-  loop: 0
-  backAndFort: 0
-  playOnStart: 0
-  linkedComponents:
-  - {fileID: 7345797691732943217}
-  onStart:
-    m_PersistentCalls:
-      m_Calls: []
-  onTurn:
-    m_PersistentCalls:
-      m_Calls: []
-  onEnd:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &8325708948488965399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482793826202751620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13dfef2a555c43e4e96f1ad01bf107aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireCode: WATER
-  pickable: {fileID: 1691399875816406685}
-  waterPlayer: {fileID: 4743176098793879276}
 --- !u!1 &1924856294490407636
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +525,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1145478581006493264}
   - component: {fileID: 7345797691732943217}
+  - component: {fileID: 4567546337699809810}
   m_Layer: 0
   m_Name: Pivot
   m_TagString: Untagged
@@ -594,21 +567,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: -1.0678225
-      outSlope: -1.0678225
+      inSlope: 1.8763671
+      outSlope: 1.8763671
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.03639926
-    - serializedVersion: 3
-      time: 0.13450271
-      value: 0.0028181374
-      inSlope: 2.3372157
-      outSlope: 2.3372157
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.04776436
+      outWeight: 0.024442844
     - serializedVersion: 3
       time: 1
       value: 1
@@ -669,5 +633,32 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  multiplier: {x: 360, y: 1, z: 1}
+  multiplier: {x: -360, y: 1, z: 1}
   baseValue: {x: -0, y: 0, z: 0}
+--- !u!114 &4567546337699809810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560134074790240945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8669e32575a69f949bd080fe267e7c64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
+  loop: 0
+  backAndFort: 0
+  playOnStart: 0
+  linkedComponents:
+  - {fileID: 7345797691732943217}
+  onStart:
+    m_PersistentCalls:
+      m_Calls: []
+  onTurn:
+    m_PersistentCalls:
+      m_Calls: []
+  onEnd:
+    m_PersistentCalls:
+      m_Calls: []
