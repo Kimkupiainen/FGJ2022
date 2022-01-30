@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 public class PlayGame : MonoBehaviour
 {
     [SerializeField] Animator fader;
-
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
     public void playGame()
     {
         fader.SetTrigger("FadeOut");
