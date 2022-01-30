@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 1.1704621, g: 1.2986776, b: 1.4729246, a: 1}
+  m_IndirectSpecularColor: {r: 1.1704627, g: 1.2986791, b: 1.4729261, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2977,6 +2977,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kytkinkaappi (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[0].requiredState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[1].requiredState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[2].requiredState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[3].requiredState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[4].requiredState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[5].requiredState
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8446660532301667452, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -3044,6 +3068,22 @@ PrefabInstance:
     - target: {fileID: 2206998207566875111, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
       propertyPath: m_Name
       value: Kytkinkaappi (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[1].requiredState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[2].requiredState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[4].requiredState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[5].requiredState
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8446660532301667452, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
       propertyPath: m_RootOrder
@@ -8095,6 +8135,22 @@ PrefabInstance:
     - target: {fileID: 2206998207566875111, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
       propertyPath: m_Name
       value: Kytkinkaappi
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[0].requiredState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[1].requiredState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[3].requiredState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7977746481998903208, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
+      propertyPath: kytkimet.Array.data[5].requiredState
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8446660532301667452, guid: 3f9b973586e19134cb8b872307928fe1, type: 3}
       propertyPath: m_RootOrder
@@ -15066,6 +15122,12 @@ PrefabInstance:
     - target: {fileID: 2973031285500301127, guid: 46921e53c54ec774f8538c72d889ec82, type: 3}
       propertyPath: m_Name
       value: Pickable Painting
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310778978048603580, guid: 46921e53c54ec774f8538c72d889ec82, type: 3}
+      propertyPath: m_text
+      value: '1 1 0
+
+        1 0 1'
       objectReference: {fileID: 0}
     - target: {fileID: 7500462765127357834, guid: 46921e53c54ec774f8538c72d889ec82, type: 3}
       propertyPath: code
@@ -24368,6 +24430,12 @@ PrefabInstance:
     - target: {fileID: 2973031285500301127, guid: 46921e53c54ec774f8538c72d889ec82, type: 3}
       propertyPath: m_Name
       value: Pickable Painting (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6310778978048603580, guid: 46921e53c54ec774f8538c72d889ec82, type: 3}
+      propertyPath: m_text
+      value: '1 0 1
+
+        0 1 0'
       objectReference: {fileID: 0}
     - target: {fileID: 7500462765127357834, guid: 46921e53c54ec774f8538c72d889ec82, type: 3}
       propertyPath: code
