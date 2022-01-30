@@ -17,6 +17,12 @@ public class GhostMovement : MonoBehaviour
     [SerializeField] private UseObject ghostHand;
     [SerializeField] private UseObject humanHand;
     [SerializeField] private Camera highlightCamera;
+    [SerializeField] private AudioEffectSpawner audioSpawner;
+
+    private void OnValidate()
+    {
+        this.ValidateComponent(ref audioSpawner);
+    }
 
     private void Start()
     {
@@ -66,11 +72,11 @@ public class GhostMovement : MonoBehaviour
                 playerCamPos.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
                 playerPosition.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
                 playerPosition.transform.position += transform.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime);
-                playerPosition.transform.position += transform.TransformDirection(Vector3.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime);                
+                playerPosition.transform.position += transform.TransformDirection(Vector3.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime);
             }
             if (Input.GetButtonDown("Fire3") && chosenCharacter == 0)
             {
-                playerPosition.transform.localScale += crouchHeight; 
+                playerPosition.transform.localScale += crouchHeight;
             }
             if (Input.GetButtonUp("Fire3") || chosenCharacter != 0)
             {
@@ -90,6 +96,7 @@ public class GhostMovement : MonoBehaviour
                 ghostHand.Enable(false);
                 humanHand.Enable(true);
                 highlightCamera.enabled = false;
+                audioSpawner.Spawn("GhostToPlayer");
                 playerCamPos.SetActive(true);
                 ghostCamPos.SetActive(false);
                 playerCam.transform.rotation = playerPosition.transform.rotation;
@@ -101,6 +108,7 @@ public class GhostMovement : MonoBehaviour
                 ghostHand.Enable(true);
                 humanHand.Enable(false);
                 highlightCamera.enabled = true;
+                audioSpawner.Spawn("PlayerToGhost");
                 Transform newGhostPosition = playerPosition.transform;
                 playerCamPos.SetActive(false);
                 ghostCamPos.SetActive(true);

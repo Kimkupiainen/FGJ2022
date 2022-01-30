@@ -15,6 +15,10 @@ public class AudioEffectSpawner : MonoBehaviour
     {
         Spawn(point, effects[0].Clip);
     }
+    public void Spawn(string effectName)
+    {
+        Spawn(transform.position, effectName);
+    }
     public void Spawn(Vector3 point, string effectName)
     {
         for (int i = 0; i < effects.Count; i++)
