@@ -291,6 +291,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2676612110368292583}
     m_Modifications:
+    - target: {fileID: 5486573337525958840, guid: 643017e5a5754d544b2a6118eb4ffa89, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ca5b7ba602ae6fa4b80e11b1a1c6aba6, type: 2}
     - target: {fileID: 6279360459815688557, guid: 643017e5a5754d544b2a6118eb4ffa89, type: 3}
       propertyPath: m_Name
       value: painting_frame
