@@ -30,7 +30,6 @@ public class AudioEffectSpawner : MonoBehaviour
 
     public void Spawn(Vector3 point, AudioClip clip)
     {
-        Debug.Log("Spawning " + clip.name);
         AudioSource source = Instantiate(effectPrefab, point, Quaternion.identity);
         source.clip = clip;
         source.Play();
