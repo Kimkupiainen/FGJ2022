@@ -24,6 +24,7 @@ public class C7_Player : MonoBehaviour
     public UnityEvent OnEnd { get { return onEnd; } }
     private float timer = 0.0f;
     private float direction = 1f;
+    public void ForceDirection(float dir) { direction = dir; }
 
     private C7_Player_Play_State state = C7_Player_Play_State.notPlaying;
     public C7_Player_Play_State State { get => state; private set => state = value; }
@@ -108,6 +109,19 @@ public class C7_Player : MonoBehaviour
     {
         if (State == C7_Player_Play_State.paused) { Continue(); }
         else { Play(); }
+    }
+
+    public void TryContinue()
+    {
+        if (State == C7_Player_Play_State.paused)
+        { Continue(); }
+    }
+
+    public void ForceContinue(float _time = 1.0f, float _dir = -1.0f)
+    {
+        ForceToPoint(_time);
+        ForceDirection(_dir);
+        Continue();
     }
 
     public enum C7_Player_Play_State

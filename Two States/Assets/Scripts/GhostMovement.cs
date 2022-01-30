@@ -16,6 +16,7 @@ public class GhostMovement : MonoBehaviour
     Vector3 crouchHeight = new Vector3(0, -0.5f, -0);
     [SerializeField] private UseObject ghostHand;
     [SerializeField] private UseObject humanHand;
+    [SerializeField] private Camera highlightCamera;
 
     private void Start()
     {
@@ -88,6 +89,7 @@ public class GhostMovement : MonoBehaviour
             case 0:
                 ghostHand.Enable(false);
                 humanHand.Enable(true);
+                highlightCamera.enabled = false;
                 playerCamPos.SetActive(true);
                 ghostCamPos.SetActive(false);
                 playerCam.transform.rotation = playerPosition.transform.rotation;
@@ -98,6 +100,7 @@ public class GhostMovement : MonoBehaviour
             case 1:
                 ghostHand.Enable(true);
                 humanHand.Enable(false);
+                highlightCamera.enabled = true;
                 Transform newGhostPosition = playerPosition.transform;
                 playerCamPos.SetActive(false);
                 ghostCamPos.SetActive(true);

@@ -19,11 +19,11 @@ public class PickableObject : MonoBehaviour
 
     [Tooltip("Object types which can be used if this object is picked up. Including pickable allows swapping objects without extra dropping.")]
     [SerializeField] private List<UsableObjectType> usableObjectTypes = new List<UsableObjectType>();
-    public List<UsableObjectType> UsableObjectTypes { get => usableObjectTypes; }
+    public List<UsableObjectType> UsableObjectTypes { get => usableObjectTypes; set => usableObjectTypes = value; }
 
     [Tooltip("Use for key/lock combinations etc.")]
     [SerializeField] private string code = "";
-    public string Code { get => code; }
+    public string Code { get => code; set => code = value; }
 
 
 

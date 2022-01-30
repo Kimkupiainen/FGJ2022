@@ -53,7 +53,7 @@ public enum UsableObjectType
     lockThing = 50,
 
     slot = 60,
-
+    fill = 61,
 
 
 }
