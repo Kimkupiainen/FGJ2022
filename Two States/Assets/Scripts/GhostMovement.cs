@@ -106,7 +106,7 @@ public class GhostMovement : MonoBehaviour
                 ghostCamPos.SetActive(true);
                 ghostPosition.transform.position = newGhostPosition.position;
                 ghostCam.transform.rotation = ghostCam.transform.rotation;
-                ghostPosition.transform.parent = null;
+                //ghostPosition.transform.parent = null;
                 canMove = true;
                 break;
 
@@ -118,7 +118,7 @@ public class GhostMovement : MonoBehaviour
         yield return new WaitForSeconds(2);
         ghostPosition.transform.position = newGhostPosition.position;
         ghostPosition.transform.rotation = playerPosition.transform.rotation;
-        ghostPosition.transform.parent = playerPosition.transform;
+        //ghostPosition.transform.parent = playerPosition.transform;
         canMove = true;
         StopCoroutine(WaitForGhost());
     }
