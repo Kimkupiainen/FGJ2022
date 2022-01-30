@@ -12,12 +12,15 @@ public class GhostMovement : MonoBehaviour
     float ghostDistance = 8;
     public CinemachineVirtualCamera playerCam, ghostCam;
     public int chosenCharacter;
-
+    Vector3 PlayerNormalHeight;
+    Vector3 crouchHeight = new Vector3(0, -0.5f, -0);
     [SerializeField] private UseObject ghostHand;
     [SerializeField] private UseObject humanHand;
 
     private void Start()
     {
+
+        PlayerNormalHeight = playerPosition.transform.localScale;
         ghostHand.Enable(false);
         humanHand.Enable(true);
         ghostCamPos.SetActive(false);
@@ -62,7 +65,15 @@ public class GhostMovement : MonoBehaviour
                 playerCamPos.transform.Rotate(-Input.GetAxis("Mouse Y"), 0, 0);
                 playerPosition.transform.Rotate(0, Input.GetAxis("Mouse X"), 0);
                 playerPosition.transform.position += transform.TransformDirection(Vector3.forward * Input.GetAxis("Vertical") * speed * Time.deltaTime);
-                playerPosition.transform.position += transform.TransformDirection(Vector3.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime);
+                playerPosition.transform.position += transform.TransformDirection(Vector3.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime);                
+            }
+            if (Input.GetButtonDown("Fire3") && chosenCharacter == 0)
+            {
+                playerPosition.transform.localScale += crouchHeight; 
+            }
+            if (Input.GetButtonUp("Fire3") || chosenCharacter != 0)
+            {
+                playerPosition.transform.localScale = PlayerNormalHeight;
             }
         }
 
