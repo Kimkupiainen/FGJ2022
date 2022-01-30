@@ -30,9 +30,16 @@ public class AudioEffectSpawner : MonoBehaviour
 
     public void Spawn(Vector3 point, AudioClip clip)
     {
+        Debug.Log("Spawning " + clip.name);
         AudioSource source = Instantiate(effectPrefab, point, Quaternion.identity);
         source.clip = clip;
         source.Play();
+    }
+
+    public void SpawnRandon() { SpawnRandom(transform.position); }
+    public void SpawnRandom(Vector3 point)
+    {
+        Spawn(point, effects[Random.Range(0, effects.Count)].Clip);
     }
 
     [System.Serializable]

@@ -96,7 +96,7 @@ public class GhostMovement : MonoBehaviour
                 ghostHand.Enable(false);
                 humanHand.Enable(true);
                 highlightCamera.enabled = false;
-                audioSpawner.Spawn("GhostToPlayer");
+                audioSpawner.Spawn("GhostToHuman");
                 playerCamPos.SetActive(true);
                 ghostCamPos.SetActive(false);
                 playerCam.transform.rotation = playerPosition.transform.rotation;
@@ -108,7 +108,7 @@ public class GhostMovement : MonoBehaviour
                 ghostHand.Enable(true);
                 humanHand.Enable(false);
                 highlightCamera.enabled = true;
-                audioSpawner.Spawn("PlayerToGhost");
+                audioSpawner.Spawn("HumanToGhost");
                 Transform newGhostPosition = playerPosition.transform;
                 playerCamPos.SetActive(false);
                 ghostCamPos.SetActive(true);
