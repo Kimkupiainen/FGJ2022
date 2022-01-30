@@ -378,6 +378,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8671599791017415705, guid: bf550cc82973dfa40ac64e94434a6863, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ca5b7ba602ae6fa4b80e11b1a1c6aba6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf550cc82973dfa40ac64e94434a6863, type: 3}
 --- !u!1 &8587701238825310507 stripped
@@ -415,7 +419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b5682edc8d9c6499e514e543125440, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectType: 1
+  objectType: 2
   code: 
   onUse:
     m_PersistentCalls:
